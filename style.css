@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html, body{
+    height: 100%;
+    
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.board{
+    height:95%;
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+
+}
+
+.area{
+    
+    /**border-radius: 50%;**/
+    position: relative;
+    overflow: hidden;
+}
+.area .prompt{
+    width: 75%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    cursor: pointer;
+    
+}
+.hidden {
+    display: none;
+  }
+.area:nth-child(1){background-color: #FF0000;}
+.area:nth-child(2){background-color: #0000FF;}
+.area:nth-child(3){background-color: #008000;}
+.area:nth-child(4){background-color: yellowgreen;}
+
+
+.endpage {
+    height: 85%;
+    width:85%;
+    background-color: darkgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Stack content vertically */
+    text-align: center; /* Center text within buttons */
+}
+
+.endpage h1 {
+    padding-top: 10%;
+    padding-bottom: 0%;
+}
+.endpage p {
+    padding-bottom: 2%;
+}
+
+
+.endpage button {
+    background-color: #4CAF50;
+    /* Text color */
+    color: white;
+    /* Font family and size */
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    /* Padding - space between text and button border */
+    padding: 10px 20px;
+    /* Border radius - rounded corners */
+    border-radius: 5px;
+    /* Border style and color */
+    border: none;
+    /* Add a shadow effect on hover */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.button:hover {
+    /* Darken the background color on hover */
+    background-color: #45a049;
+  }
+  
+  /* Change button style when clicked */
+.button:active {
+    /* Add a slight shadow on click */
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }

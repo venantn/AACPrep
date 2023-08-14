@@ -1,0 +1,49 @@
+/* Set a background color for the page */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: darkgrey;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure the content covers the entire viewport height */
+    box-sizing: border-box;
+    flex-direction: column;
+}
+  
+  /* Center the content vertically and horizontally */
+  #score-details {
+    width: 85%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    box-sizing: border-box;
+  }
+  #score-details p {
+    margin: 5px 0;
+    padding-bottom: 2%;
+    color: darkgrey;
+
+  }
+  /* Style the score details container */
+  .score-container {
+    width: 70%;
+    margin: 10px auto; /* Center the container horizontally */
+    background-color: lightslategray;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    box-sizing: border-box; /* Include padding and borders in the height calculation */
+  }
+  
+  /* Style the score value */
+  .score-value {
+    margin-top: 0;
+    font-size: 18px;
+    color: darkgray;
+  }
+  
