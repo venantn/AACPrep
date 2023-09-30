@@ -5,23 +5,37 @@ const board = document.querySelector('.board');
 const endPageElement = document.getElementById('end-page');
 const restartButton = document.getElementById('restart-btn');
 const scoreReportButton = document.getElementById('score-report-btn');
+
 let trialCount = 0;
+let startTime;
+const timeTakenArray = []
+
+const startScreen = document.getElementById('start-screen');
+const startButton = document.getElementById('start-button');
 
 
+// Event listener for the start button click
+startButton.addEventListener('click', startGame);
+// Function to start the game
+function startGame() {
+  startScreen.style.display = 'none'; // Hide the start screen
+  board.style.display = 'grid'; // Show the game board
+  run(); // Start the game
+}
 
 
 function run() {
-  if (trialCount >= 18) {
-    // If 10 trials are reached, stop further execution
+  if (trialCount >= 5) {
+    // If x trials are reached, stop further execution
     document.getElementById('end-page').style.display = 'block';
-    board.classList.add('hidden');
+    board.style.display = 'none';;
 
         // Handle restart button click
     restartButton.addEventListener('click', () => {
       // Reset the trial count and hide the end page
       trialCount = 0;
       endPageElement.style.display = 'none';
-      board.classList.remove('hidden');
+      board.style.display = 'grid';
       // Restart the game
       run();
     });
@@ -72,11 +86,18 @@ function run() {
 
   // Add the img to the new random area 
   area.appendChild(img);
+  // Start the timer when the image appears
+  startTime = Date.now();
 
   trialCount++;
 
   // Makes it so whenever the prompt icon is clicked, the icon disappears and the function is run again with the icon in a new area
   img.addEventListener('click', () => {
+    // Stop the timer when the correct click happens
+    const endTime = Date.now();
+    const timeTaken = (endTime - startTime) / 1000;
+    timeTakenArray.push(timeTaken);
+
     // Remove the img from the current area immediately
     area.removeChild(img);
     // Run the function again after a short delay
@@ -142,7 +163,7 @@ function generateScoreDetails() {
   return `<p>Array Size: ${areas.length} <p> <p>Number of marks: ${clickValuesArray.length}</p>
   <p>Number of correct marks: ${countOnes(clickValuesArray)}</p>
   <p>Number of Incorrect Marks: ${countZeros(clickValuesArray)}</p>
-  
+  <p>Time Taken to Click the correct mark: ${timeTakenArray}</p>  
   <p>Average: ${calculateAverage(clickValuesArray)}</p>`
   ;
 }
