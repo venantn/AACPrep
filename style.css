@@ -61,6 +61,7 @@ body{
     align-items: center;
     flex-direction: column; /* Stack content vertically */
     text-align: center; /* Center text within buttons */
+    
 }
 
 .endpage h1 {
@@ -69,6 +70,7 @@ body{
 }
 .endpage p {
     padding-bottom: 2%;
+    
 }
 
 

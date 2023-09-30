@@ -17,7 +17,7 @@ body {
     width: 85%;
     background-color: #f4f4f4;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 2px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     text-align: left;
     box-sizing: border-box;
@@ -26,6 +26,8 @@ body {
     margin: 5px 0;
     padding-bottom: 2%;
     color: darkgrey;
+    word-wrap: break-word;
+    overflow-x: auto;
 
   }
   /* Style the score details container */
@@ -33,7 +35,7 @@ body {
     width: 70%;
     margin: 10px auto; /* Center the container horizontally */
     background-color: lightslategray;
-    border-radius: 10px;
+    border-radius: 2px;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
